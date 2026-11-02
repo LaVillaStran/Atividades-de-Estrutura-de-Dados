@@ -38,6 +38,19 @@ int insere_lista_final(Lista* li, struct aluno al) {
 }
 ///////////////////////////////////////////////////////
 
+int tamanho_lista(Lista* li) {
+    if (li == NULL)
+        return 0;
+    int cont = 0;
+    Elem* no = *li;
+    while (no != NULL) {
+        cont++;
+        no = no->prox;
+    }
+    return cont;
+}
+//////////////////////////////////////////////////////
+
 // 1
 void imprime_lista_inversa(Lista* li){
     if (li == NULL || *li == NULL) {
@@ -178,7 +191,6 @@ int remove_lista_pos(Lista* li, int pos) {
 
 // O custo operacional é O(n), pela verificação da consistência
 // e pelo percurso do while até a posição desejada.
-// Não consegui fazer o teste no código mas digitarei a qtd do custo:
 
 /*
 Lista inicial: 33, 23, 16, 10, 5
